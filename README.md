@@ -1,2 +1,2 @@
 # countries-test
-this is just a random API fetch app not yet complete as I am yet to complete the day and night theme toggler function 
+This is just a random API fetch web app that is yet to be complete (30%). i still have the day and night theme button (toggler) functionality to do, and i am also yet to link each country card to it's more info (information) page. 
