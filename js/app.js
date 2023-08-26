@@ -15,18 +15,25 @@ const displayCountries = countries =>{
 const getCountry = (country) =>{
         console.log(country);
         return `
-                <div class="card">
+                <div class="card" id="card">
                         <div class="img-container">
                                 <img src="${country.flags.png}" alt="" srcset="" class="card-img">
                         </div>                        
-                        <div class="card-content">
+                        <div class="card-content" id="card-text">
                                 <h3 class="country-title">${country.name.common}</h3>
                                 <p class="population"><span id="make-bold">Population:</span>${country.population}</p>
-                                <p class="region"><span id="make-bold">Region:</span> America</p>
-                                <p class="capital"><span id="make-bold">Capital:</span>Abuja</p>
+                                <p class="region"><span id="make-bold">Region:</span>${country.region}</p>
+                                <p class="capital"><span id="make-bold">Capital:</span>${country.capital}</p>
                         </div>
                 </div>
         `
 }
 
-loadCountryAPI()
+// loadCountryAPI()
+
+// addEventListener() = 
+// const = 
+// 
+// 
+// 
+// 
