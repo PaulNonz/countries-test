@@ -1,10 +1,16 @@
+/* * @font-face {
+        font-family: Nunito Sans;
+        src: url(https://fonts.google.com/specimen/Nunito+Sans);
+} */
+
 *{
         margin: 0 0 0 0;
         padding: 0 0 0 0;
 }
 
 body{
-        background-color: rgb(218, 238, 231);
+        font-family: Nunito Sans, sans-serif;
+
 }
 
 body p{
@@ -53,7 +59,6 @@ nav{
         display: flex;
         justify-content: space-between;
         box-shadow: 0 4px 8px rgba(0, 0, 1, 0.05);
-        background-color: white;
         position: relative;
 }
 
@@ -73,18 +78,23 @@ nav .togger-section button{
         margin-left: 5px;
         font-size: 18px;
         border:  none;
-        background-color: white;
+        background-color:unset;
 }
 
 nav .togger-section img{
         height: 15px;
         position: absolute;
-        top: 40%;
-        right:11.7%;
+        top: 43%;
+        right:10%;
 }
 
 /* FOR THE MAIN BODY */
 
+body option{
+        width: 10px;
+        height: ;
+        background-color: red;
+}
 .main-body .flex-bot{
         display: flex;
         flex-wrap: wrap;
@@ -93,39 +103,60 @@ nav .togger-section img{
 }
 
 .main-body .search-section input{
-        padding: 3% 20% ;
+        padding: 6% 10% ;
+        text-align: center;
         width: 150%;
         height: 120%;
         border: none;
-        box-shadow: 0 9px 19px 0 rgba(0, 0, 0, 0.08);
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 1, 0.05);
+        background-color:unset;
 }
-section .flex-bot button{
-        padding: 15% 30% 10% 110%;
-        box-shadow: 0 1px 1px rgba(197, 161, 161, 0.004);
+
+
+.main-body .back-section img{
+        position:absolute;
+        height: 12px;
+        top: 38%;
+        left: 0.6%;
+}
+
+
+section .back-section #back-buttler{
+        padding: 40% 120% 40% 120%;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0, 0, 1, 0.1);
+        background-color: unset;
+        border: none;
+        border-radius: 10px;
 }
 
 .main-body .search-section img{
         position:absolute;
-        height: 15px;
-        top: 30%;
-        left: 0.8%;
+        height: 12px;
+        top: 42%;
+        left: 2%;
 }
 
 .main-body .flex-bot .sort-section input{
-        padding: 3% 12% ;
+        padding: 6% 10% ;
+        text-align: center;
         width: 124%;
         height: 120%;
-        border: none;
+        border: unset;
+        border-radius: 20px;
         margin-left: -24%;
-        box-shadow: 0 9px 19px 0 rgba(0, 0, 0, 0.08);
+        box-shadow: 0 4px 8px rgba(0, 0, 1, 0.05);
+        background-color:unset
 }
 
 .main-body .flex-bot .sort-section img{
         position:absolute;
-        height: 15px;
-        top: 30%;
-        right: 0.8%;
+        height: 12px;
+        top: 42%;
+        right: 1.3%;
 }
+
 
 .main-body-cards{
         display: flex;
@@ -136,11 +167,10 @@ section .flex-bot button{
 }
 
 .main-body-cards .card{
-        border: 1px solid #ccc;
+        /* border: 1px solid #ccc; */
         width: 22.5%;
         height: 290px;
         justify-content:space-evenly;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 9px;
         margin-top: 1.5%;
         padding-bottom: 1%;
@@ -175,7 +205,7 @@ section .flex-bot button{
     }
 
 .main-body-cards .card .card-content{
-        padding: 5% 8% 8% 8%;
+        padding: 5% 8% 20% 8%;
 }
 
 @media screen and (max-width: 1118px){
@@ -455,7 +485,6 @@ section .flex-bot button{
         .main-body .flex-bot .sort-section input{
                 padding: 3.6% 10% 3.6% 25% ;
                 width: 150%;
-                /* height: 120%; */
                 margin-top: 14%;
                 margin-bottom: 2%;
         }
@@ -504,19 +533,16 @@ section .flex-bot button{
                 top:34.5%;
                 top:34.5%;
                 right: 33%;
-        }
-       
+        }      
 }
 
 @media screen and (max-width: 295px) {
         nav .togger-section img{
                 top:35.8%;
                 right: 36%;
-
         }
 }
 
 body section .flex-bot datalist .option{
-        background-color: red;
         font-size: 8px;
-}
+} 
