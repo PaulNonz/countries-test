@@ -28,8 +28,8 @@ buttonTuggler.addEventListener('click', function toggle(value) {
                 searcher.style.backgroundColor = '#2B3743';
                 filterer.style.color = '#EFF1F0';
                 filterer.style.backgroundColor = '#2B3743';
-                imgCh.src = './img/2.Moon-_Sleep_-Night.png';
-                filterImg.src = './img/6.right.arrow.night.png';
+                imgCh.src = 'img/2.Moon-_Sleep_-Night.png';
+                filterImg.src = 'img/6.right.arrow.night.png';
                 searcherImg.src = './img/3.search-icon-night.png';
                 cardPortion.style.backgroundColor = '#2B3743';
                 cardText.style.color = '#EFF1F0'
