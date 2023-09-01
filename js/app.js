@@ -29,11 +29,4 @@ const getCountry = (country) =>{
         `
 }
 
-// loadCountryAPI()
-
-// addEventListener() = 
-// const = 
-// 
-// 
-// 
-// 
+loadCountryAPI()
