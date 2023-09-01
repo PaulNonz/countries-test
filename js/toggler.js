@@ -7,12 +7,7 @@ const filterer =document.getElementById('filterer');
 const imgCh = document.getElementById('img-sizer');
 const searcherImg = document.getElementById('searcher-img');
 const filterImg = document.getElementById('filterer-img');
-const cardPortion = document.getElementById('card');
-const cardText = document.getElementById('card-text');
 
-
-
-// console.log(filterImg.contains);
 
 let changeCol = true;
 
@@ -31,9 +26,7 @@ buttonTuggler.addEventListener('click', function toggle(value) {
                 imgCh.src = 'img/2.Moon-_Sleep_-Night.png';
                 filterImg.src = 'img/6.right.arrow.night.png';
                 searcherImg.src = './img/3.search-icon-night.png';
-                cardPortion.style.backgroundColor = '#2B3743';
-                cardText.style.color = '#EFF1F0'
-        } else {
+          } else {
                 body.style.backgroundColor = '#EFF1F0';
                 buttonTuggler.textContent = 'Dark Mode';
                 buttonTuggler.style.color = 'black';
@@ -47,8 +40,6 @@ buttonTuggler.addEventListener('click', function toggle(value) {
                 imgCh.src = './img/1.Moon-_Sleep_-Day.png';
                 filterImg.src = './img/6.right.arrow.day.png';
                 searcherImg.src = './img/4.search-icon-day.png';
-                cardPortion.style.backgroundColor = 'white';
-                cardText.style.color = 'black';
         } 
         changeCol = !changeCol
 });
