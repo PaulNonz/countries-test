@@ -1,49 +1,81 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>more info page</title>
-        <link rel="stylesheet" href="css/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Info</title>
+    <link rel="stylesheet" href="./css/style2.css">
 </head>
-<body id="entire-body">
-        <nav class="navbar  navbar-expand-sm navbar-dark bg-primary" id="padder" >
-                <a class="navbar-brand" href="#" id="nav-logo">Where in  the world?</a>
-                <div class="togger-section">
-                    <img id="img-sizer"  src="img/1.Moon-_Sleep_-Day.png" alt="" srcset="">
-                    <button type="button" class="navbar-button-toggler" id="navbar-button-toggler">Dark mode</button>
-                </div>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-primary" id="padder">
+            <a class="navbar-brand" style="text-decoration: none" href="./index.html" id="nav-logo">Where in the world?</a>
+            <div class="togger-section">
+                <img id="img-sizer" src="img/1.Moon-_Sleep_-Day.png" alt="" srcset="">
+                <button type="button" class="navbar-button-toggler2" id="navbar-button-toggler">Dark mode</button>
+            </div>
         </nav>
-        <section class="main-body" id="padder">
-                <div class="flex-bot">
-                        <div class="back-section">
-                                <img src="img/5.left.arrow.day.png" alt="" class="back-icon" id="back-icon">
-                                <button type="submit" id="back-buttler">Back</button>
-                        </div>
-                </div> 
-        </section>
-        <section class="more-info-section" id="padder">
-                <div class="img-container">
-                        <img src="img/8.germany.png" alt="" srcset="" class="more-info-img">
-                </div>                        
-                <div class="card-content">
-                        <h3 class="country-title" id="marg-up1">Germany</h3>
-                        <p class="native-name" id="marg-up"><span id="make-bold">Native Name:</span>  3,000,890</p>
-                        <p class="population" id="marg-up"><span id="make-bold">Population:</span>  3,000,890</p>
-                        <p class="region" id="marg-up"><span id="make-bold">Region:</span> America</p>
-                        <p class="sub-region" id="marg-up"><span id="make-bold">Sub Region:</span> America</p>
-                        <p class="capital" id="marg-up"><span id="make-bold">Capital:</span>Abuja</p>
-                </div>
-                <div class="card-content1" id="move-down">
-                        <p class="top-level-domain" id="marg-up"><span id="make-bold">Top Level Domain:</span>  3,000,890</p>
-                        <p class="curency" id="marg-up"><span id="make-bold">Curency:</span>  3,000,890</p>
-                        <p class="language" id="marg-up"><span id="make-bold">Language:</span> America</p>
-                </div>
-        </section>
+        <div id="back-button-cruiser">
+            <button id="backButton">Back</button>
+        </div>
+        
+    </header>
+    <div id="countryInfo" class="container"></div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="js/app.js"></script>
+    <script src="./js/toggler2.js"></script>
+    <script>
+        document.getElementById('backButton').addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
 
-<script src="./js/app.js"></script>
-<script src="./js/toggler2.js"></script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const selectedCountry = JSON.parse(localStorage.getItem('selectedCountry'));
+            const countryInfoDiv = document.getElementById('countryInfo');
+            if (selectedCountry) {
+                countryInfoDiv.innerHTML = `
+                    <div class="img-container">
+                        <img src="${selectedCountry.flags.svg}" alt="" srcset="" class="more-info-img">
+                    </div>
+                    <div>
+                        <div id="top-p">
+                            <div>
+                                <div class="card-content" id="top1">
+                                <h3 class="country-title" id="marg-up1">${selectedCountry.name.common}</h3>
+                                <p class="native-name" id="marg-up"><strong>Native Name:</strong> ${selectedCountry.name.common}</p>
+                                <p class="population" id="marg-up"><strong>Population:</strong> ${selectedCountry.population}</p>
+                                <p class="region" id="marg-up"><strong>Region:</strong> ${selectedCountry.region}</p>
+                                <p class="sub-region" id="marg-up"><strong>Sub Region:</strong>${selectedCountry.subregion}</p>
+                                <p class="capital" id="marg-up"><strong>Capital:</strong>${selectedCountry.capital}</p>
+                            </div>
+                            <div class="card-content1" id="top2">
+                                <p class="top-level-domain" id="marg-up"><strong>Top Level Domain:</strong>  ${selectedCountry.tld}</p>
+                                <p class="curency" id="marg-up"><strong>Currencies:</strong> ${Object.values(selectedCountry.currencies).map(currency => currency.name).join(', ')}</p>
+                                <p class="language" id="marg-up"><strong>Language:</strong> ${Object.values(selectedCountry.languages).join(', ')}</p>
+                            </div>
+                        </div>    
+                        <div  id="move-down; bottom">
+                            <p class="top-level-domain" id="marg-up"><strong>Top Level Domain:</strong>  ${selectedCountry.tld}</p>
+                            <p class="curency" id="marg-up"><strong>Currencies:</strong> ${Object.values(selectedCountry.currencies).map(currency => currency.name).join(', ')}</p>
+                            <p class="language" id="marg-up"><strong>Language:</strong> ${Object.values(selectedCountry.languages).join(', ')}</p>
+                        </div>
+                    </div>
+                </div>                        
+                 
+
+                `;
+            } else {
+                countryInfoDiv.innerHTML = '<p>No country selected.</p>';
+            }
+        });
+
+
+
+        
+
+
+
+    </script>
 </body>
 </html>
